@@ -5,15 +5,21 @@
 // 다르면 (a + b) * c is not same as a + (b * c)
 // 라고 출력하세요.
 
-// 사용되는 개념: 변수, 연산자, 조건문, 삼항연산자
+const a = 2;
+const b = 3;
+const c = 4;
+let d = (a + b) * c;
+let f = a + (b * c);
+console.log(d);
+console.log(f);
+if (d === f) {
+    console.log('(a + b) * c is same as a + (b * c)');
 
-// 변수 a, b, c 만들기
+} else {
+    console.log('(a + b) * c is not same as a + (b * c)');
 
-// (a + b) * c 를 계산하고 다른 변수에 저장한 후 출력하기
+}
+let text = d === f ? '(a + b) * c is same as a + (b * c)' : '(a + b) * c is not same as a + (b * c)';
+console.log(text);
 
-// a + (b * c) 를 계산하고 다른 변수에 저장한 후 출력하기
-
-// 조건문을 이용하여 둘을 비교하고 결과를 출력하기
-
-// 삼항연산자를 이용하여 다시 둘을 비교하고 결과를 출력하기 
 

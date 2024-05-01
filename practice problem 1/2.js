@@ -5,16 +5,49 @@
 // 1x^2 - 4x + 3 = 0 의 해를 구하고
 // 그 해를 각각 이차함수에 넣어 함숫값이 0이 되는지 확인해보세요.
 
-// 사용되는 개념: 변수, 연산자, 조건문, 함수, 배열, 배열 내장함수
+const a = 1;
+const b = -4;
+const c = 3;
 
-// 이차 함수 구현하기
+function secondary(a, b, c, x) {
+    return a * x * x + b * x + c;
 
-// 1 부터 10까지의 배열을 함숫값의 배열로 바꾸기
+}
 
-// 같은 작업을 원본 배열을 건드리지 않으면서 하기(1부터 10까지의 배열이 연산 후에도 그대로이도록)
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const squared = [];
+for (let i = 0; i < array.length; i++) {
+    squared.push(secondary(a, b, c, array[i]))
 
-// 근의 공식을 이용하여 해를 구하는 함수 구현하기
+}
+console.log(array);
+console.log(squared);
 
-// 1x^2 - 4x + 3 = 0의 해 구하기
+function root1(a, b, c) {
+    return (-b + (b * b - 4 * a * c) ** 0.5) / 2 / a;
+}
+function root2(a, b, c) {
+    return (-b - (b * b - 4 * a * c) ** 0.5) / 2 / a;
+}
+for (let i = 0; i < array.length; i++) {
+    if (array[i] === root1(a, b, c)) {
 
-// 구한 해를 이차함수에 넣어 함숫값이 0인지 확인하기 
+
+        if (secondary(a, b, c, array[i]) === 0) {
+            console.log(array[i] + '=해가 맞습니다')
+        } else {
+            console.log('해가 아닙니다')
+        }
+
+    } else if (array[i] === root2(a, b, c)) {
+
+        if (secondary(a, b, c, array[i]) === 0) {
+            console.log(array[i] + '=해가 맞습니다')
+        } else {
+            console.log('해가 아닙니다')
+        }
+    } else {
+
+        console.log(array[i] + '=해가 아닙니다');
+    }
+}
