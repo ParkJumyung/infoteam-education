@@ -15,22 +15,20 @@ function secondary(a, b, c, x) {
 }
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const squared = [];
-for (let i = 0; i < array.length; i++) {
-    squared.push(secondary(a, b, c, array[i]))
+const square = n => secondary(a, b, c, n);
+const squared = array.map(square);
 
-}
+
 console.log(array);
 console.log(squared);
 
-function root1(a, b, c) {
-    return (-b + (b * b - 4 * a * c) ** 0.5) / 2 / a;
+function root(a, b, c) {
+    return (-b + (b * b - 4 * a * c) ** 0.5) / 2 / a || (-b - (b * b - 4 * a * c) ** 0.5) / 2 / a;
 }
-function root2(a, b, c) {
-    return (-b - (b * b - 4 * a * c) ** 0.5) / 2 / a;
-}
+
+
 for (let i = 0; i < array.length; i++) {
-    if (array[i] === root1(a, b, c)) {
+    if (array[i] === root(a, b, c)) {
 
 
         if (secondary(a, b, c, array[i]) === 0) {
@@ -39,13 +37,7 @@ for (let i = 0; i < array.length; i++) {
             console.log('해가 아닙니다')
         }
 
-    } else if (array[i] === root2(a, b, c)) {
 
-        if (secondary(a, b, c, array[i]) === 0) {
-            console.log(array[i] + '=해가 맞습니다')
-        } else {
-            console.log('해가 아닙니다')
-        }
     } else {
 
         console.log(array[i] + '=해가 아닙니다');
