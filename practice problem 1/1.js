@@ -24,6 +24,6 @@ else
         console.log('(a + b) * c is not same as a + (b * c)');
     }
 // 삼항연산자를 이용하여 다시 둘을 비교하고 결과를 출력하기 
-let text = (n1 === n2)?'(a + b) * c is same as a + (b * c)':'(a + b) * c is not same as a + (b * c)';
+const text = (n1 === n2)?'(a + b) * c is same as a + (b * c)':'(a + b) * c is not same as a + (b * c)';
 
 console.log(text);
