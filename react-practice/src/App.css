@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+
+
+
+
+#seleted {
+  text-decoration: line-through;
+  text-decoration-color: black;
+}
+
+h2 {
+  text-align: right;
+}
